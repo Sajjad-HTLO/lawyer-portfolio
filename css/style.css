@@ -309,19 +309,11 @@ h1, h2, h3, p { margin-top: 0; }
 /* hero content (site text overlaying the image) */
 .hero-content {
   position: absolute;
-  top: 13%;
+  top: 14%;
   left: 5%;
-  width: 40%;
-  text-align: left;
+  width: 44%;
+  text-align: start;
 }
-.hero-content > * { animation: fadeUp 0.7s ease both; }
-.hero-content > *:nth-child(1) { animation-delay: 0.05s; }
-.hero-content > *:nth-child(2) { animation-delay: 0.12s; }
-.hero-content > *:nth-child(3) { animation-delay: 0.19s; }
-.hero-content > *:nth-child(4) { animation-delay: 0.26s; }
-.hero-content > *:nth-child(5) { animation-delay: 0.33s; }
-.hero-content > *:nth-child(6) { animation-delay: 0.4s; }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 
 .hero h1 {
   font-size: clamp(1.6rem, 3.4vw, 2.6rem);
@@ -353,48 +345,26 @@ h1, h2, h3, p { margin-top: 0; }
 .hero-meta-item span { font-size: 0.78rem; color: var(--muted-on-dark); }
 .hero-meta-item strong { font-size: 0.98rem; color: var(--text-on-dark); font-weight: 600; }
 
-/* hero CTA — real buttons placed exactly over the buttons inside the image */
+/* hero CTA — real buttons sit under the text (the hero image has no buttons) */
 .hero .hero-cta {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  pointer-events: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 0.5rem 0 0;
 }
-.hero-btn {
-  position: absolute;
-  pointer-events: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  padding: 0;
-  border-radius: 999px;
-  font-size: clamp(0.78rem, 1.35vw, 1.02rem);
-  white-space: nowrap;
-  overflow: hidden;
-  line-height: 1.2;
-}
-.hero-btn svg { width: 1em; height: 1em; flex: none; }
+.hero-btn { position: static; }
 .hero-btn--ghost {
-  left: 5.3%;
-  top: 63.2%;
-  width: 16%;
-  height: 3.7%;
-  background: rgba(7, 26, 24, 0.88);
+  background: rgba(7, 26, 24, 0.55);
   border: 1.5px solid var(--gold);
   color: var(--gold-bright);
 }
-.hero-btn--ghost:hover { background: rgba(7, 26, 24, 0.97); border-color: var(--gold-bright); color: var(--gold-bright); transform: none; }
+.hero-btn--ghost:hover { background: rgba(7, 26, 24, 0.8); border-color: var(--gold-bright); color: var(--gold-bright); }
 .hero-btn--gold {
-  left: 22.4%;
-  top: 61.2%;
-  width: 19.4%;
-  height: 5.6%;
   background: var(--gold);
   color: var(--green-950);
   box-shadow: 0 10px 26px -16px rgba(0, 0, 0, 0.6);
 }
-.hero-btn--gold:hover { background: var(--gold-bright); transform: none; }
+.hero-btn--gold:hover { background: var(--gold-bright); }
 
 /* ---------- Trust band ---------- */
 .trust-band {

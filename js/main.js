@@ -582,8 +582,16 @@
 
     node = el("footer.about");
     if (node) {
-      node.innerHTML = "<h3>" + esc(f.aboutTitle || "درباره") + "</h3>" +
-        '<div class="footer-about"><p>' + esc(f.aboutText || "") + "</p></div>";
+      var b = D.brand || {};
+      var brandName = b.name || l.name || "";
+      var brandMark = b.mark || "و";
+      var brandTagline = b.tagline || l.title || "";
+      node.innerHTML =
+        '<a class="footer-brand-head" href="#home">' +
+          '<span class="footer-avatar" aria-hidden="true">' + esc(brandMark) + "</span>" +
+          "<span><strong>" + esc(brandName) + "</strong><small>" + esc(brandTagline) + "</small></span>" +
+        "</a>" +
+        '<p class="footer-about-text">' + esc(f.aboutText || "") + "</p>";
     }
     node = el("footer.links");
     if (node) {
@@ -606,10 +614,24 @@
           return "<li>" + icon(item.icon) + (item.href ? '<a href="' + esc(item.href) + '">' + v + "</a>" : "<span>" + v + "</span>") + "</li>";
         }).join("") + "</ul>";
     }
-    node = el("footer.social");
+    node = el("footer.emblem");
+    if (node) {
+      var mark2 = (D.brand && D.brand.mark) || "و";
+      node.innerHTML =
+        '<div class="footer-emblem" aria-hidden="true">' +
+          '<span class="footer-emblem-mark">' + esc(mark2) + "</span>" +
+          '<svg><use href="#i-scales"/></svg>' +
+        "</div>";
+    }
+    node = el("footer.extra");
     if (node) {
       var socials = l.socialLinks || [];
-      node.innerHTML = "<h3>" + esc(f.socialTitle || "شبکه‌های اجتماعی") + "</h3>" +
+      var badges = (D.stats || []).slice(0, 3);
+      node.innerHTML =
+        '<div class="footer-badges">' + badges.map(function (s) {
+          return '<span class="footer-badge">' + icon(s.icon || "award") +
+            "<strong>" + esc(s.value) + "</strong><small>" + esc(s.label) + "</small></span>";
+        }).join("") + "</div>" +
         '<div class="footer-social">' + socials.map(function (s) {
           return '<a href="' + esc(s.href) + '" aria-label="' + esc(s.label) + '" rel="noopener" target="_blank">' + icon(s.icon) + "</a>";
         }).join("") + "</div>";
