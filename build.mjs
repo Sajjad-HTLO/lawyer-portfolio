@@ -8,7 +8,7 @@ const root = dirname(fileURLToPath(import.meta.url));
 const src = join(root, ".");
 const out = join(root, "dist");
 const SKIP_DIRS = new Set(["dist", "node_modules", ".git", ".github"]);
-const SKIP_FILES = new Set(["build.mjs", "serve.mjs", "package.json", "package-lock.json", "README.md", "requirements.txt", "hero.png", "footer-mockup.jpg"]);
+const SKIP_FILES = new Set(["build.mjs", "serve.mjs", "package.json", "package-lock.json", "README.md", "requirements.txt", "hero.png", "footer-mockup.jpg", "expected-hero-footer.jpg", "hero-footer.html"]);
 
 function minifyCSS(css) {
   return css

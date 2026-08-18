@@ -579,20 +579,6 @@
     var f = D.footer || {};
     var node;
 
-    node = el("footer.stats");
-    if (node) {
-      var stats = (D.footerStats || []).map(function (s, i) {
-        return '<div class="footer-stat' + (i < 3 ? "" : " footer-stat--last") + '">' +
-          '<div class="footer-stat-head">' +
-            '<span class="footer-stat-icon" aria-hidden="true">' + icon(s.icon) + "</span>" +
-            "<span>" + esc(s.title) + "</span>" +
-          "</div>" +
-          '<span class="footer-stat-value">' + esc(s.value) + "</span>" +
-          '<span class="footer-stat-label">' + esc(s.label) + "</span>" +
-        "</div>";
-      }).join("");
-      node.innerHTML = stats;
-    }
     node = el("footer.disclaimer");
     if (node && f.disclaimer) {
       node.textContent = f.disclaimer;
