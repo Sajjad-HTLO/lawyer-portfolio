@@ -577,64 +577,21 @@
 
   function renderFooter() {
     var f = D.footer || {};
-    var l = D.lawyer || {};
     var node;
 
-    node = el("footer.about");
+    node = el("footer.stats");
     if (node) {
-      var b = D.brand || {};
-      var brandName = b.name || l.name || "";
-      var brandMark = b.mark || "و";
-      var brandTagline = b.tagline || l.title || "";
-      node.innerHTML =
-        '<a class="footer-brand-head" href="#home">' +
-          '<span class="footer-avatar" aria-hidden="true">' + esc(brandMark) + "</span>" +
-          "<span><strong>" + esc(brandName) + "</strong><small>" + esc(brandTagline) + "</small></span>" +
-        "</a>" +
-        '<p class="footer-about-text">' + esc(f.aboutText || "") + "</p>";
-    }
-    node = el("footer.links");
-    if (node) {
-      var links = D.nav && D.nav.links;
-      node.innerHTML = "<h3>" + esc(f.linksTitle || "دسترسی سریع") + "</h3>" +
-        "<ul>" + (links || []).map(function (link) {
-          return '<li><a data-footer-link href="' + esc(link.href) + '">' + esc(link.label) + "</a></li>";
-        }).join("") + "</ul>";
-    }
-    node = el("footer.contact");
-    if (node) {
-      var contactItems = [
-        { icon: "phone", value: l.phone, href: l.phoneHref },
-        { icon: "mail", value: l.email, href: l.emailHref },
-        { icon: "pin", value: l.address }
-      ].filter(function (item) { return item.value; });
-      node.innerHTML = "<h3>" + esc(f.contactTitle || "اطلاعات تماس") + "</h3>" +
-        '<ul class="footer-contact">' + contactItems.map(function (item) {
-          var v = esc(item.value);
-          return "<li>" + icon(item.icon) + (item.href ? '<a href="' + esc(item.href) + '">' + v + "</a>" : "<span>" + v + "</span>") + "</li>";
-        }).join("") + "</ul>";
-    }
-    node = el("footer.emblem");
-    if (node) {
-      var mark2 = (D.brand && D.brand.mark) || "و";
-      node.innerHTML =
-        '<div class="footer-emblem" aria-hidden="true">' +
-          '<span class="footer-emblem-mark">' + esc(mark2) + "</span>" +
-          '<svg><use href="#i-scales"/></svg>' +
+      var stats = (D.footerStats || []).map(function (s, i) {
+        return '<div class="footer-stat' + (i < 3 ? "" : " footer-stat--last") + '">' +
+          '<div class="footer-stat-head">' +
+            '<span class="footer-stat-icon" aria-hidden="true">' + icon(s.icon) + "</span>" +
+            "<span>" + esc(s.title) + "</span>" +
+          "</div>" +
+          '<span class="footer-stat-value">' + esc(s.value) + "</span>" +
+          '<span class="footer-stat-label">' + esc(s.label) + "</span>" +
         "</div>";
-    }
-    node = el("footer.extra");
-    if (node) {
-      var socials = l.socialLinks || [];
-      var badges = (D.stats || []).slice(0, 3);
-      node.innerHTML =
-        '<div class="footer-badges">' + badges.map(function (s) {
-          return '<span class="footer-badge">' + icon(s.icon || "award") +
-            "<strong>" + esc(s.value) + "</strong><small>" + esc(s.label) + "</small></span>";
-        }).join("") + "</div>" +
-        '<div class="footer-social">' + socials.map(function (s) {
-          return '<a href="' + esc(s.href) + '" aria-label="' + esc(s.label) + '" rel="noopener" target="_blank">' + icon(s.icon) + "</a>";
-        }).join("") + "</div>";
+      }).join("");
+      node.innerHTML = stats;
     }
     node = el("footer.disclaimer");
     if (node && f.disclaimer) {
