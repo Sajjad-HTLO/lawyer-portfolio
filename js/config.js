@@ -79,15 +79,6 @@ window.SITE_DATA = {
     metadata: []
   },
 
-  /* ---------- آمار اعتماد (پس از هرو) ----------
-     این مقادیر فقط نمونه‌اند؛ پیش از انتشار با آمار واقعی و تأییدشده جایگزین شوند. */
-  stats: [
-    { value: "۱۰+", label: "سال سابقه", icon: "award" },
-    { value: "۵۰۰+", label: "پرونده بررسی‌شده", icon: "doc" },
-    { value: "۸+", label: "حوزه‌ی تخصصی", icon: "grid" },
-    { value: "۹۵٪", label: "رضایت موکلین", icon: "users" }
-  ],
-
   /* ---------- درباره من ---------- */
   about: {
     title: "درباره من",
@@ -102,14 +93,22 @@ window.SITE_DATA = {
     ]
   },
 
-  /* ---------- حوزه‌های تخصصی فعالیت ---------- */
+  /* ---------- آمار اعتماد (بخش پایین صفحه — از sections.html) ---------- */
+  trustStats: [
+    { value: "۱۰", suffix: "+", label: "سال سابقه فعالیت", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>' },
+    { value: "۵۰۰", suffix: "+", label: "پرونده رسیدگی‌شده", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h9l5 5v10.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19.5Z"/><path d="M14 4v5h5M8 13h8M8 17h5"/></svg>' },
+    { value: "۸", suffix: "+", label: "حوزه تخصصی", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></svg>' },
+    { value: "۹۵", suffix: "٪", label: "رضایت موکلین", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 13.2s1.2 2 3.5 2 3.5-2 3.5-2M9 9.5h.01M15 9.5h.01"/></svg>' }
+  ],
+
+  /* ---------- حوزه‌های تخصصی فعالیت (از sections.html) ---------- */
   practiceAreas: [
-    { title: "حقوق خانواده", icon: "family", description: "رسیدگی و مشاوره در امور خانواده از جمله طلاق، مهریه، حضانت و نفقه." },
-    { title: "حقوق کیفری", icon: "gavel", description: "دفاع از متهم و پیگیری شکایت در مراجع قضایی با دقت و پیگیری مستمر." },
-    { title: "حقوق ملکی", icon: "building", description: "مشاوره و اقدام در دعاوی مربوط به ملک، زمین، اجاره و ساخت‌وساز." },
-    { title: "حقوق تجاری", icon: "briefcase", description: "ثبت شرکت، دعاوی شرکتی و رسیدگی به اختلافات تجاری و بازرگانی." },
-    { title: "قراردادها", icon: "contract", description: "تنظیم، بررسی و داوری قراردادهای تجاری و مدنی با نهایت دقت." },
-    { title: "دعاوی حقوقی", icon: "scales", description: "پیگیری دعاوی مالی، مطالبات و تمامی اختلافات حقوقی اشخاص." }
+    { title: "حقوق خانواده", description: "مشاوره و نمایندگی در دعاوی خانوادگی با در نظر گرفتن حساسیت‌های شخصی هر پرونده.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="2.6"/><circle cx="17" cy="9" r="2.1"/><path d="M4 19v-1.2c0-2 2.2-3.4 5-3.4s5 1.4 5 3.4V19"/><path d="M14.5 14.6c1.9.2 3.5 1.4 3.5 3v1.4"/></svg>' },
+    { title: "حقوق کیفری", description: "دفاع و مشاوره در مراحل مختلف دادرسی کیفری با رعایت اصول محرمانگی.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.6 3.2 7.9 8 9 4.8-1.1 8-4.4 8-9V6l-8-3Z"/><path d="m9.3 12.2 1.9 1.9 3.7-3.9"/></svg>' },
+    { title: "حقوق ملکی", description: "بررسی و پیگیری دعاوی و قراردادهای مرتبط با اموال غیرمنقول.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5.5h4V20"/></svg>' },
+    { title: "حقوق تجاری", description: "مشاوره حقوقی به کسب‌وکارها در ساختار قراردادها و دعاوی تجاری.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="1.6"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><path d="M3 13h18"/></svg>' },
+    { title: "قراردادها", description: "تنظیم، بررسی و اصلاح قراردادها برای پیشگیری از اختلافات آتی.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14.5 3.2V8h4.7"/><path d="m9.5 15 2 2 3.5-3.8"/></svg>' },
+    { title: "دعاوی حقوقی", description: "نمایندگی در دادگاه‌های حقوقی و پیگیری پرونده تا حصول نتیجه.", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h9l5 5v10.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19.5Z"/><path d="M14 4v5h5M8 12h8M8 16h5"/></svg>' }
   ],
 
   /* ---------- سوابق حرفه‌ای (گاه‌شمار) ---------- */

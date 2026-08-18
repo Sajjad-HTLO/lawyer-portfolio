@@ -132,33 +132,6 @@
       </div>
     </section>
 
-    <!-- ===== Trust / Credentials Statistics ===== -->
-    <section class="trust-band" id="trust" aria-label="آمار و اعتبار">
-      <div class="container">
-        <ul class="trust-grid" data-render="trust.stats"></ul>
-      </div>
-    </section>
-
-    <!-- ===== About ===== -->
-    <section class="section section--light" id="about" aria-labelledby="about-title">
-      <div class="container about-grid">
-        <div class="section-head" data-render="about.head"></div>
-        <div class="about-body">
-          <div class="about-copy" data-render="about.body"></div>
-          <dl class="about-meta" data-render="about.meta"></dl>
-        </div>
-        <aside class="about-card" data-render="about.card"></aside>
-      </div>
-    </section>
-
-    <!-- ===== Practice Areas ===== -->
-    <section class="section section--dark" id="practice-areas" aria-labelledby="areas-title">
-      <div class="container">
-        <div class="section-head section-head--center" data-render="areas.head"></div>
-        <div class="areas-grid" data-render="areas.items"></div>
-      </div>
-    </section>
-
     <!-- ===== Professional Experience (Timeline) ===== -->
     <section class="section section--light" id="experience" aria-labelledby="experience-title">
       <div class="container">
@@ -220,6 +193,63 @@
       </div>
     </section>
   </main>
+
+  <!-- ===== Trust / Credentials Statistics (from sections.html) ===== -->
+  <section class="trust" aria-labelledby="trust-heading">
+    <h2 id="trust-heading" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">آمار و اعتبار حرفه‌ای</h2>
+    <div class="container">
+      <div class="trust-grid" id="trust-grid"></div>
+      <p class="trust-note">اعداد فوق نمونه و قابل جایگزینی هستند و صرفاً پس از تأیید اطلاعات واقعی نمایش داده می‌شوند.</p>
+    </div>
+  </section>
+
+  <!-- ===== About the Attorney (from sections.html) ===== -->
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-body reveal">
+          <span class="eyebrow">درباره من</span>
+          <h2 id="about-heading" class="section-heading">تعهد به دقت حقوقی و اعتماد موکل</h2>
+          <h3>مسیر حرفه‌ای</h3>
+          <p>[بیوگرافی حرفه‌ای وکیل در این بخش قرار می‌گیرد. توضیحی درباره‌ی سال‌های فعالیت، حوزه‌های تمرکز و رویکرد کاری، بر پایه‌ی اطلاعات تأییدشده، جایگزین این متن نمونه خواهد شد.]</p>
+          <h3>فلسفه حرفه‌ای</h3>
+          <p>[توضیح کوتاه درباره‌ی نگاه وکیل به همکاری با موکل، اهمیت شفافیت در روند پرونده، و تعهد به بررسی دقیق هر پرونده متناسب با شرایط آن.]</p>
+          <hr class="about-divider">
+          <ul class="about-qual-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/></svg><span><b>تحصیلات</b>[نام دانشگاه و رشته تحصیلی]</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V7"/></svg><span><b>عضویت در کانون وکلا</b>[شماره پروانه / کانون مربوطه]</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.3-9.1C1.2 8.6 3 5 6.6 5c2 0 3.4 1.1 4.4 2.6C12 6.1 13.4 5 15.4 5 19 5 20.8 8.6 19.3 11.9 17 16.4 12 21 12 21Z"/></svg><span><b>محل فعالیت</b>[نام شهر]</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h9l5 5v10.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19.5Z"/><path d="M14 4v5h5"/></svg><span><b>حوزه‌های تخصصی</b>[فهرست کوتاه حوزه‌های فعالیت]</span></li>
+          </ul>
+        </div>
+        <div class="about-media reveal">
+          <div class="about-frame">
+            <div class="placeholder-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="10" r="2.2"/><path d="m21 16-5.5-5.5L4 21"/></svg>
+              <span>تصویر دوم — دفتر کار / پرتره حرفه‌ای</span>
+            </div>
+          </div>
+          <div class="about-frame-deco" aria-hidden="true"></div>
+          <dl class="about-meta-card">
+            <div><dt>تحصیلات</dt><dd>[دانشگاه / مقطع]</dd></div>
+            <div><dt>شماره پروانه</dt><dd>[شماره پروانه]</dd></div>
+            <div><dt>محل فعالیت</dt><dd>[شهر]</dd></div>
+            <div><dt>سال‌های تجربه</dt><dd>[عدد تأییدشده]</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Practice Areas (from sections.html) ===== -->
+  <section class="practice" id="practice-areas" aria-labelledby="practice-heading">
+    <div class="container">
+      <span class="eyebrow">خدمات تخصصی</span>
+      <h2 id="practice-heading" class="section-heading">حوزه‌های تخصصی فعالیت</h2>
+      <p class="section-lede">بخشی از زمینه‌های اصلی فعالیت، برای بررسی دقیق‌تر هر پرونده متناسب با شرایط آن.</p>
+      <div class="practice-grid" id="practice-grid"></div>
+    </div>
+  </section>
 
   <!-- ===== Footer ===== -->
   <footer class="stats-footer">

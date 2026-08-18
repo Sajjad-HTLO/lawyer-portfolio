@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بخش‌های بعدی — سایت وکیل | آمار، درباره من، حوزه‌های تخصصی</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --green:      #0B2422;
+    --green-soft: #10322F;
+    --ivory:      #F5F0E7;
+    --gold:       #B99A5B;
+    --gold-soft:  rgba(185,154,91,0.35);
+    --charcoal:   #1C1C1C;
+    --beige:      #E9E2D6;
+
+    --container: 1240px;
+    --radius: 10px;
+
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--ivory);
+    color: var(--charcoal);
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.75;
+  }
+
+  img{ max-width: 100%; display: block; }
+
+  .container{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  a{ color: inherit; }
+
+  :focus-visible{
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  /* ---------- shared section chrome ---------- */
+
+  .eyebrow{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before{
+    content: "";
+    width: 26px;
+    height: 1px;
+    background: var(--gold);
+    display: inline-block;
+  }
+  .eyebrow.on-dark{ color: #D9C293; }
+
+  .section-heading{
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 700;
+    margin: 0 0 18px;
+    color: var(--charcoal);
+  }
+  .section-heading.on-dark{ color: var(--ivory); }
+
+  .section-lede{
+    max-width: 640px;
+    color: #4b4741;
+    font-size: 16px;
+    margin: 0 0 44px;
+  }
+  .section-lede.on-dark{ color: #C9C2B4; }
+
+  .reveal{
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .7s var(--ease), transform .7s var(--ease);
+  }
+  .reveal.in-view{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity: 1; transform: none; transition: none; }
+  }
+
+  /* =====================================================
+     8. TRUST / CREDENTIALS STATISTICS
+     ===================================================== */
+
+  .trust{
+    background: var(--green);
+    background-image:
+      radial-gradient(circle at 85% 20%, rgba(185,154,91,0.08), transparent 45%);
+    padding: 64px 0;
+    position: relative;
+  }
+  .trust::after{
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+  }
+
+  .trust-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .trust-item{
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+  }
+  .trust-item + .trust-item::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: rgba(245,240,231,0.14);
+  }
+
+  .trust-icon{
+    width: 30px;
+    height: 30px;
+    margin: 0 auto 14px;
+    color: var(--gold);
+  }
+  .trust-icon svg{ width: 100%; height: 100%; }
+
+  .trust-value{
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--ivory);
+    line-height: 1;
+    letter-spacing: 0.5px;
+  }
+  .trust-value sup{
+    font-size: 0.5em;
+    color: var(--gold);
+    margin-inline-start: 2px;
+    top: -0.6em;
+  }
+
+  .trust-label{
+    margin-top: 10px;
+    font-size: 14.5px;
+    color: #C9C2B4;
+  }
+
+  .trust-note{
+    text-align: center;
+    margin: 40px auto 0;
+    max-width: 520px;
+    font-size: 12.5px;
+    color: rgba(245,240,231,0.45);
+  }
+
+  @media (max-width: 860px){
+    .trust-grid{ grid-template-columns: repeat(2, 1fr); row-gap: 36px; }
+    .trust-item:nth-child(3)::before, .trust-item:nth-child(1)::before{ display: none; }
+    .trust-item:nth-child(3), .trust-item:nth-child(4){ padding-top: 0; }
+    .trust-item:nth-child(3)::after, .trust-item:nth-child(4)::after{
+      content:""; position:absolute; top:-18px; right: 18%; left: 18%; height:1px;
+      background: rgba(245,240,231,0.14);
+    }
+  }
+  @media (max-width: 480px){
+    .trust-item::before{ display: none !important; }
+    .trust-item::after{ display: none !important; }
+  }
+
+  /* =====================================================
+     9. ABOUT THE ATTORNEY
+     ===================================================== */
+
+  .about{
+    padding: 110px 0;
+  }
+
+  .about-grid{
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 72px;
+    align-items: start;
+  }
+
+  /* portrait column (visually left, so first in RTL source order shows on the right —
+     we place it second in markup to sit on the LEFT for editorial contrast with the hero) */
+  .about-media{
+    position: relative;
+  }
+  .about-frame{
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: var(--beige);
+  }
+  .about-frame img{
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .about-frame .placeholder-mark{
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 10px;
+    color: #9c9384;
+    font-size: 13px;
+    background:
+      repeating-linear-gradient(135deg, rgba(28,28,28,0.03) 0 14px, transparent 14px 28px);
+  }
+  .about-frame .placeholder-mark svg{ width: 34px; height: 34px; opacity: .6; }
+
+  .about-frame-deco{
+    position: absolute;
+    left: -18px;
+    bottom: -18px;
+    width: 64%;
+    height: 64%;
+    border: 1px solid var(--gold-soft);
+    border-radius: var(--radius);
+    z-index: -1;
+  }
+
+  .about-meta-card{
+    margin-top: 22px;
+    background: var(--green);
+    color: var(--ivory);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 20px;
+  }
+  .about-meta-card dt{
+    font-size: 12px;
+    color: #B9C4C0;
+    margin: 0 0 4px;
+  }
+  .about-meta-card dd{
+    margin: 0;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--ivory);
+  }
+
+  .about-body h3{
+    font-size: 15px;
+    color: var(--gold);
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+  .about-body p{
+    color: #423f3a;
+    font-size: 16px;
+    max-width: 60ch;
+    margin: 0 0 22px;
+  }
+
+  .about-divider{
+    border: 0;
+    height: 1px;
+    margin: 30px 0;
+    background: linear-gradient(90deg, var(--gold-soft), transparent 65%);
+  }
+
+  .about-qual-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+  }
+  .about-qual-list li{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14.5px;
+    color: #423f3a;
+  }
+  .about-qual-list li svg{
+    width: 18px; height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--gold);
+  }
+  .about-qual-list b{
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #8a8478;
+    margin-bottom: 2px;
+  }
+
+  @media (max-width: 900px){
+    .about{ padding: 80px 0; }
+    .about-grid{ grid-template-columns: 1fr; gap: 44px; }
+    .about-frame{ max-width: 380px; margin: 0 auto; }
+    .about-meta-card{ max-width: 380px; margin-inline: auto; margin-top: 22px; }
+    .about-qual-list{ grid-template-columns: 1fr; }
+  }
+
+  /* =====================================================
+     10. PRACTICE AREAS
+     ===================================================== */
+
+  .practice{
+    padding: 110px 0 120px;
+    background: var(--beige);
+    position: relative;
+  }
+
+  .practice-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .practice-card{
+    background: var(--ivory);
+    border: 1px solid rgba(28,28,28,0.08);
+    border-radius: var(--radius);
+    padding: 30px 26px;
+    transition: transform .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .practice-card:hover,
+  .practice-card:focus-within{
+    transform: translateY(-4px);
+    border-color: var(--gold-soft);
+    box-shadow: 0 14px 30px -18px rgba(11,36,34,0.35);
+  }
+
+  .practice-icon{
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .practice-icon svg{
+    width: 22px; height: 22px;
+    color: var(--gold);
+  }
+
+  .practice-card h3{
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: var(--charcoal);
+  }
+  .practice-card p{
+    font-size: 14.5px;
+    color: #5c584f;
+    margin: 0 0 18px;
+    min-height: 66px;
+  }
+
+  .practice-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .25s var(--ease), color .25s var(--ease), gap .25s var(--ease);
+  }
+  .practice-link svg{
+    width: 15px; height: 15px;
+    transition: transform .25s var(--ease);
+  }
+  .practice-link:hover{
+    color: var(--gold);
+    border-color: var(--gold-soft);
+  }
+  .practice-link:hover svg{
+    transform: translateX(-3px);
+  }
+
+  @media (max-width: 980px){
+    .practice-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 620px){
+    .practice{ padding: 80px 0 90px; }
+    .practice-grid{ grid-template-columns: 1fr; }
+    .practice-card p{ min-height: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =====================================================
+     8. TRUST / CREDENTIALS STATISTICS
+     ===================================================== -->
+<section class="trust" aria-labelledby="trust-heading">
+  <h2 id="trust-heading" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">آمار و اعتبار حرفه‌ای</h2>
+  <div class="container">
+    <div class="trust-grid" id="trust-grid"></div>
+    <p class="trust-note">اعداد فوق نمونه و قابل جایگزینی هستند و صرفاً پس از تأیید اطلاعات واقعی نمایش داده می‌شوند.</p>
+  </div>
+</section>
+
+<!-- =====================================================
+     9. ABOUT THE ATTORNEY
+     ===================================================== -->
+<section class="about" id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- text column: sits on the RIGHT in RTL because it's first in source -->
+      <div class="about-body reveal">
+        <span class="eyebrow">درباره من</span>
+        <h2 id="about-heading" class="section-heading">تعهد به دقت حقوقی و اعتماد موکل</h2>
+
+        <h3>مسیر حرفه‌ای</h3>
+        <p>
+          [بیوگرافی حرفه‌ای وکیل در این بخش قرار می‌گیرد. توضیحی درباره‌ی سال‌های فعالیت،
+          حوزه‌های تمرکز و رویکرد کاری، بر پایه‌ی اطلاعات تأییدشده، جایگزین این متن نمونه خواهد شد.]
+        </p>
+
+        <h3>فلسفه حرفه‌ای</h3>
+        <p>
+          [توضیح کوتاه درباره‌ی نگاه وکیل به همکاری با موکل، اهمیت شفافیت در روند پرونده،
+          و تعهد به بررسی دقیق هر پرونده متناسب با شرایط آن.]
+        </p>
+
+        <hr class="about-divider">
+
+        <ul class="about-qual-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/></svg>
+            <span><b>تحصیلات</b>[نام دانشگاه و رشته تحصیلی]</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V7"/></svg>
+            <span><b>عضویت در کانون وکلا</b>[شماره پروانه / کانون مربوطه]</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.3-9.1C1.2 8.6 3 5 6.6 5c2 0 3.4 1.1 4.4 2.6C12 6.1 13.4 5 15.4 5 19 5 20.8 8.6 19.3 11.9 17 16.4 12 21 12 21Z"/></svg>
+            <span><b>محل فعالیت</b>[نام شهر]</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h9l5 5v10.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19.5Z"/><path d="M14 4v5h5"/></svg>
+            <span><b>حوزه‌های تخصصی</b>[فهرست کوتاه حوزه‌های فعالیت]</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- media column: sits on the LEFT in RTL for rhythm-contrast with the hero portrait -->
+      <div class="about-media reveal">
+        <div class="about-frame">
+          <div class="placeholder-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="10" r="2.2"/><path d="m21 16-5.5-5.5L4 21"/></svg>
+            <span>تصویر دوم — دفتر کار / پرتره حرفه‌ای</span>
+          </div>
+          <!-- <img src="/images/lawyer-secondary.jpg" alt="[نام و نام خانوادگی] در محیط کار"> -->
+        </div>
+        <div class="about-frame-deco" aria-hidden="true"></div>
+
+        <dl class="about-meta-card">
+          <div><dt>تحصیلات</dt><dd>[دانشگاه / مقطع]</dd></div>
+          <div><dt>شماره پروانه</dt><dd>[شماره پروانه]</dd></div>
+          <div><dt>محل فعالیت</dt><dd>[شهر]</dd></div>
+          <div><dt>سال‌های تجربه</dt><dd>[عدد تأییدشده]</dd></div>
+        </dl>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     10. PRACTICE AREAS
+     ===================================================== -->
+<section class="practice" id="practice-areas" aria-labelledby="practice-heading">
+  <div class="container">
+    <span class="eyebrow">خدمات تخصصی</span>
+    <h2 id="practice-heading" class="section-heading">حوزه‌های تخصصی فعالیت</h2>
+    <p class="section-lede">
+      بخشی از زمینه‌های اصلی فعالیت، برای بررسی دقیق‌تر هر پرونده متناسب با شرایط آن.
+    </p>
+
+    <div class="practice-grid" id="practice-grid"></div>
+  </div>
+</section>
+
+
+<script>
+  /* =====================================================
+     CENTRALIZED, EASILY-REPLACEABLE CONTENT DATA
+     Replace the arrays below with verified information.
+     ===================================================== */
+
+  const trustStats = [
+    {
+      value: "۱۰", suffix: "+",
+      label: "سال سابقه فعالیت",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>'
+    },
+    {
+      value: "۵۰۰", suffix: "+",
+      label: "پرونده رسیدگی‌شده",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h9l5 5v10.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19.5Z"/><path d="M14 4v5h5M8 13h8M8 17h5"/></svg>'
+    },
+    {
+      value: "۸", suffix: "+",
+      label: "حوزه تخصصی",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></svg>'
+    },
+    {
+      value: "۹۵", suffix: "٪",
+      label: "رضایت موکلین",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 13.2s1.2 2 3.5 2 3.5-2 3.5-2M9 9.5h.01M15 9.5h.01"/></svg>'
+    }
+  ];
+
+  const practiceAreas = [
+    {
+      title: "حقوق خانواده",
+      description: "مشاوره و نمایندگی در دعاوی خانوادگی با در نظر گرفتن حساسیت‌های شخصی هر پرونده.",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="2.6"/><circle cx="17" cy="9" r="2.1"/><path d="M4 19v-1.2c0-2 2.2-3.4 5-3.4s5 1.4 5 3.4V19"/><path d="M14.5 14.6c1.9.2 3.5 1.4 3.5 3v1.4"/></svg>'
+    },
+    {
+      title: "حقوق کیفری",
+      description: "دفاع و مشاوره در مراحل مختلف دادرسی کیفری با رعایت اصول محرمانگی.",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.6 3.2 7.9 8 9 4.8-1.1 8-4.4 8-9V6l-8-3Z"/><path d="m9.3 12.2 1.9 1.9 3.7-3.9"/></svg>'
+    },
+    {
+      title: "حقوق ملکی",
+      description: "بررسی و پیگیری دعاوی و قراردادهای مرتبط با اموال غیرمنقول.",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5.5h4V20"/></svg>'
+    },
+    {
+      title: "حقوق تجاری",
+      description: "مشاوره حقوقی به کسب‌وکارها در ساختار قراردادها و دعاوی تجاری.",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="1.6"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><path d="M3 13h18"/></svg>'
+    },
+    {
+      title: "قراردادها",
+      description: "تنظیم، بررسی و اصلاح قراردادها برای پیشگیری از اختلافات آتی.",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14.5 3.2V8h4.7"/><path d="m9.5 15 2 2 3.5-3.8"/></svg>'
+    },
+    {
+      title: "دعاوی حقوقی",
+      description: "نمایندگی در دادگاه‌های حقوقی و پیگیری پرونده تا حصول نتیجه.",
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h9l5 5v10.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19.5Z"/><path d="M14 4v5h5M8 12h8M8 16h5"/></svg>'
+    }
+  ];
+
+  const arrowIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>';
+
+  function renderTrust(){
+    const grid = document.getElementById('trust-grid');
+    grid.innerHTML = trustStats.map(stat => `
+      <div class="trust-item reveal">
+        <span class="trust-icon" aria-hidden="true">${stat.icon}</span>
+        <div class="trust-value">${stat.value}<sup>${stat.suffix}</sup></div>
+        <div class="trust-label">${stat.label}</div>
+      </div>
+    `).join('');
+  }
+
+  function renderPractice(){
+    const grid = document.getElementById('practice-grid');
+    grid.innerHTML = practiceAreas.map(area => `
+      <article class="practice-card reveal">
+        <span class="practice-icon" aria-hidden="true">${area.icon}</span>
+        <h3>${area.title}</h3>
+        <p>${area.description}</p>
+        <a class="practice-link" href="#contact">
+          مشاهده جزئیات
+          ${arrowIcon}
+        </a>
+      </article>
+    `).join('');
+  }
+
+  renderTrust();
+  renderPractice();
+
+  /* scroll reveal */
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!prefersReduced && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('in-view');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i % 4) * 60 + 'ms';
+      io.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+  }
+</script>
+
+</body>
+</html>

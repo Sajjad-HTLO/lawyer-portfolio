@@ -112,63 +112,15 @@
   }
 
   function renderTrust() {
-    var node = el("trust.stats");
-    var stats = D.stats || [];
-    if (node) {
-      node.innerHTML = stats.map(function (s) {
-        return '<li class="trust-item reveal">' +
-          '<span class="trust-icon" aria-hidden="true">' + icon(s.icon || "check") + "</span>" +
-          '<div><strong>' + esc(s.value) + "</strong><span>" + esc(s.label) + "</span></div>" +
-        "</li>";
-      }).join("");
-    }
-  }
-
-  function renderAbout() {
-    var a = D.about || {};
-    var l = D.lawyer || {};
-    var node;
-
-    node = el("about.head");
-    if (node) node.innerHTML = headHTML("", a.title, "");
-
-    node = el("about.body");
-    if (node) {
-      var html = "";
-      (a.paragraphs || []).forEach(function (p) { html += "<p>" + esc(p) + "</p>"; });
-      if (a.points && a.points.length) {
-        html += '<ul class="about-points">' + a.points.map(function (p) {
-          return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>";
-        }).join("") + "</ul>";
-      }
-      node.innerHTML = html;
-    }
-
-    node = el("about.meta");
-    if (node) {
-      var items = [
-        { label: "تحصیلات", value: l.education },
-        { label: "عضویت در کانون وکلا", value: l.barAssociation },
-        { label: "محل فعالیت", value: l.location },
-        { label: "شماره پروانه", value: l.licenseNumber }
-      ].filter(function (m) { return m.value; });
-      if (items.length) {
-        node.innerHTML = items.map(function (m) {
-          return '<div><dt>' + esc(m.label) + "</dt><dd>" + esc(m.value) + "</dd></div>";
-        }).join("");
-      }
-    }
-
-    node = el("about.card");
-    if (node) {
-      var alt = (l.name || "وکیل") + " — تصویر ثانویه";
-      var inner = l.secondaryImage
-        ? imgHTML(l.secondaryImage, alt, "about-img")
-        : '<div class="about-img about-img--placeholder"><span aria-hidden="true">' + icon("users") + "</span><span>تصویر دفتر / وکیل</span></div>";
-      node.innerHTML = inner +
-        "<h3>" + esc(l.name || "") + "</h3>" +
-        '<p class="about-role">' + esc(l.title || "") + "</p>";
-    }
+    var grid = document.getElementById("trust-grid");
+    if (!grid) return;
+    grid.innerHTML = (D.trustStats || []).map(function (s) {
+      return '<div class="trust-item reveal">' +
+        '<span class="trust-icon" aria-hidden="true">' + s.icon + "</span>" +
+        '<div class="trust-value">' + esc(s.value) + "<sup>" + esc(s.suffix) + "</sup></div>" +
+        '<div class="trust-label">' + esc(s.label) + "</div>" +
+      "</div>";
+    }).join("");
   }
 
   function renderHead(sectionKey, cfg) {
@@ -176,21 +128,17 @@
     if (node) node.innerHTML = headHTML(cfg.kicker, cfg.title, cfg.lead);
   }
 
-  function renderAreas() {
-    var cfg = { kicker: "تخصص‌ها", title: "حوزه‌های تخصصی فعالیت", lead: "" };
-    renderHead("areas", cfg);
-    var node = el("areas.items");
-    var items = D.practiceAreas || [];
-    if (node) {
-      node.innerHTML = items.map(function (it, i) {
-        return '<article class="area-card reveal reveal-delay-' + (i % 3) + '">' +
-          '<div class="area-icon">' + icon(it.icon) + "</div>" +
-          "<h3>" + esc(it.title) + "</h3>" +
-          "<p>" + esc(it.description) + "</p>" +
-          '<a class="area-link" href="#contact">' + "مشاهده جزئیات " + icon("arrow") + "</a>" +
-        "</article>";
-      }).join("");
-    }
+  function renderPractice() {
+    var grid = document.getElementById("practice-grid");
+    if (!grid) return;
+    grid.innerHTML = (D.practiceAreas || []).map(function (a) {
+      return '<article class="practice-card reveal">' +
+        '<span class="practice-icon" aria-hidden="true">' + a.icon + "</span>" +
+        "<h3>" + esc(a.title) + "</h3>" +
+        "<p>" + esc(a.description) + "</p>" +
+        '<a class="practice-link" href="#contact">مشاهده جزئیات ' + icon("arrow") + "</a>" +
+      "</article>";
+    }).join("");
   }
 
   function renderTimeline() {
@@ -686,8 +634,7 @@
     renderNav();
     renderHero();
     renderTrust();
-    renderAbout();
-    renderAreas();
+    renderPractice();
     renderTimeline();
     renderLegal();
     renderWhy();
