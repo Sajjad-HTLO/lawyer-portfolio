@@ -77,11 +77,11 @@
     node = el("hero.cta");
     if (node) {
       var html = "";
-      if (h.primaryCta) {
-        html += '<a class="btn btn--gold" href="' + esc(h.primaryCta.href) + '">' + esc(h.primaryCta.label) + " " + icon("arrow") + "</a>";
-      }
       if (h.secondaryCta) {
-        html += '<a class="btn btn--ghost" href="' + esc(h.secondaryCta.href) + '">' + icon("phone") + esc(h.secondaryCta.label) + "</a>";
+        html += '<a class="btn btn--ghost hero-btn hero-btn--ghost" href="' + esc(h.secondaryCta.href) + '">' + icon("phone") + esc(h.secondaryCta.label) + "</a>";
+      }
+      if (h.primaryCta) {
+        html += '<a class="btn btn--gold hero-btn hero-btn--gold" href="' + esc(h.primaryCta.href) + '">' + esc(h.primaryCta.label) + " " + icon("arrow") + "</a>";
       }
       node.innerHTML = html;
     }
@@ -98,22 +98,15 @@
       }
     }
 
-    node = el("hero.portrait");
-    if (node) {
-      var alt = (l.name || "وکیل") + " — تصویر پروفایل";
-      if (l.portrait) {
-        node.innerHTML =
-          '<div class="portrait-frame">' +
-            imgHTML(l.portrait, alt, "portrait-img") +
-            '<span class="portrait-badge">' + esc(l.title || "وکیل") + "</span>" +
-          "</div>";
+    var img = document.querySelector("[data-hero-img]");
+    if (img) {
+      var src = (D.hero && D.hero.image) || "";
+      if (src) {
+        img.src = src;
+        img.removeAttribute("aria-hidden");
+        img.setAttribute("alt", (l.name || "وکیل") + " — تصویر بخش اول");
       } else {
-        node.innerHTML =
-          '<div class="portrait-frame portrait-frame--placeholder">' +
-            '<span class="portrait-icon" aria-hidden="true">' + icon("users") + "</span>" +
-            "<span>تصویر وکیل</span>" +
-            "<small>تصویر را در پوشه assets/img قرار دهید و مسیر را در js/config.js تنظیم کنید.</small>" +
-          "</div>";
+        img.hidden = true;
       }
     }
   }

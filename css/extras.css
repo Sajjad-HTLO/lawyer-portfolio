@@ -346,13 +346,25 @@
   .site-nav a[data-nav-link].is-active { color: var(--gold-bright); }
   .nav-cta { margin-top: 1.2rem; }
 
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-visual { order: 1; }
-  .hero-visual::after { display: none; }
-  .hero-copy { order: 2; text-align: center; }
-  .hero-copy .kicker { justify-content: center; }
-  .hero-copy .kicker::before { display: none; }
-  .hero-copy .kicker::after {
+  /* hero (image-based) — switch to stacked layout on mobile */
+  .hero { padding-block: 0; }
+  .hero-art {
+    width: 100%;
+    padding-block: 0;
+  }
+  .hero-art-img {
+    border-radius: 0;
+    border: 0;
+  }
+  .hero-content {
+    position: static;
+    width: auto;
+    text-align: center;
+    padding: clamp(2.5rem, 8vw, 4rem) 6vw 0;
+  }
+  .hero-content .kicker { justify-content: center; }
+  .hero-content .kicker::before { display: none; }
+  .hero-content .kicker::after {
     content: "";
     width: 1.9rem;
     height: 2px;
@@ -360,9 +372,26 @@
     border-radius: 2px;
   }
   .hero-lead { margin-inline: auto; }
-  .hero-cta { justify-content: center; }
   .hero-meta { justify-content: center; }
-  .portrait-frame { width: min(78vw, 340px); }
+
+  .hero .hero-cta {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.6rem 6vw 0;
+    margin: 0;
+    pointer-events: auto;
+  }
+  .hero-btn,
+  .hero-btn--ghost,
+  .hero-btn--gold {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 0.95rem 1.5rem;
+    font-size: 1rem;
+  }
 
   .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
   .trust-item { padding-block: 1rem; }
@@ -378,7 +407,7 @@
 
 @media (max-width: 620px) {
   .areas-grid, .why-grid, .legal-grid, .footer-grid { grid-template-columns: 1fr; }
-  .hero-cta .btn { flex: 1 1 100%; }
+  .cta-inner .hero-cta .btn { flex: 1 1 100%; }
   .about-meta { grid-template-columns: 1fr; }
 }
 
@@ -392,7 +421,7 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
-  .hero-copy > * { animation: none; }
+  .hero-content > * { animation: none; }
   .reveal { opacity: 1; transform: none; }
   .faq-a { transition: none; }
 }
