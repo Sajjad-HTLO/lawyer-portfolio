@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" role="img" aria-label="جای تصویر پروفایل وکیل">
+  <rect width="800" height="1000" fill="#0b2422"/>
+  <rect x="1" y="1" width="798" height="998" fill="none" stroke="#b99a5b" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="400" cy="380" r="150" fill="none" stroke="#b99a5b" stroke-opacity="0.5" stroke-width="3"/>
+  <circle cx="400" cy="330" r="70" fill="none" stroke="#d2b57e" stroke-width="4"/>
+  <path d="M400 405 c-55 0 -100 30 -100 70 l0 25 h200 l0 -25 c0 -40 -45 -70 -100 -70 z" fill="#d2b57e"/>
+  <text x="400" y="640" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#b3bfb6">تصویر پروفایل</text>
+  <text x="400" y="676" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#5f6f6b">برای جایگزینی، فایل را در assets/img قرار دهید</text>
+  <rect x="330" y="760" width="140" height="2" fill="#b99a5b" opacity="0.5"/>
+</svg>

@@ -1,0 +1,1253 @@
+# Persian RTL Lawyer Personal Portfolio Website
+## Complete Implementation Requirements for a Coding Agent
+
+## 1. Project Overview
+
+Build a premium, modern, single-page personal portfolio website for a Persian-speaking lawyer.
+
+The website must be:
+- Fully Persian
+- Fully RTL (right-to-left)
+- Responsive on mobile, tablet, laptop, and large desktop screens
+- Premium, minimal, elegant, and professional
+- Designed as a personal brand / attorney portfolio, not as a generic law-firm template
+- Single-page only
+- Fast and SEO-friendly
+- Accessible
+- Production-ready
+- Easy to customize later
+
+The final website should communicate:
+- Trust
+- Professional authority
+- Experience
+- Privacy/confidentiality
+- Personal attention
+- Premium positioning
+
+Do NOT use clichéd visual design such as large scales of justice, gavels, courthouse stock photos, or overly decorative legal imagery.
+
+Use a real lawyer portrait as the primary visual asset. If no real photo is available, use a clearly marked placeholder that can easily be replaced.
+
+---
+
+# 2. Language and Direction
+
+Primary language:
+- Persian (Farsi)
+
+Direction:
+- RTL
+
+HTML must use:
+- `<html lang="fa" dir="rtl">`
+
+All UI components must be RTL-aware.
+
+Do not implement the site as an LTR site that is simply mirrored.
+
+Pay special attention to:
+- Navigation
+- Hero layout
+- Cards
+- Forms
+- Icons
+- Arrow directions
+- Timeline
+- Testimonials
+- FAQ accordion
+- Buttons
+- Input alignment
+- Mobile navigation
+- Scroll animations
+- Numerical/date presentation
+
+Persian text must have correct typography and spacing.
+
+Use Persian numerals where appropriate, especially for visible Persian content.
+
+---
+
+# 3. Visual Design Direction
+
+Design style:
+- Premium
+- Minimal
+- Sophisticated
+- Editorial
+- Modern
+- Professional
+- High-end personal brand
+
+Avoid:
+- Generic corporate templates
+- Excessive gradients
+- Excessive shadows
+- Overuse of gold
+- Busy backgrounds
+- Stock legal clichés
+- Excessive animations
+- Cheap-looking glassmorphism
+
+The website should feel expensive and intentional.
+
+## Color Palette
+
+Primary dark green:
+#0B2422
+
+Ivory:
+#F5F0E7
+
+Gold accent:
+#B99A5B
+
+Charcoal:
+#1C1C1C
+
+Light beige:
+#E9E2D6
+
+Use gold sparingly for:
+- Small accents
+- Dividers
+- Important metadata
+- Hover states
+- Decorative elements
+- Selected states
+
+The main CTA should have strong contrast and should remain accessible.
+
+---
+
+# 4. Typography
+
+Primary Persian font:
+- Vazirmatn
+
+Alternative:
+- Estedad
+
+Use a clean Persian sans-serif for body text.
+
+Headings may use a more elegant Persian serif font if a suitable web-safe/licensed option is available, but readability must remain excellent.
+
+Typography hierarchy must be strong:
+
+- Large Hero heading
+- Section headings
+- Card headings
+- Body
+- Metadata
+- Buttons
+- Small labels
+
+Do not use too many font families.
+
+Use appropriate:
+- font weights
+- line heights
+- letter spacing
+- paragraph widths
+
+Persian paragraphs should not become excessively wide on desktop.
+
+---
+
+# 5. Overall Page Structure
+
+The page must contain the following sections in this approximate order:
+
+1. Sticky Navigation
+2. Hero
+3. Trust / Credentials Statistics
+4. About the Attorney
+5. Practice Areas
+6. Professional Experience
+7. Selected Legal Experience
+8. Why Choose Me
+9. Testimonials
+10. FAQ
+11. Consultation CTA
+12. Contact
+13. Footer
+
+All navigation items should smoothly scroll to their corresponding sections.
+
+---
+
+# 6. Navigation
+
+Create a sticky/fixed navigation bar.
+
+Desktop navigation:
+
+- Lawyer name/logo
+- درباره من
+- حوزه‌های فعالیت
+- سوابق
+- سوالات متداول
+- تماس
+
+Primary CTA:
+- درخواست مشاوره
+
+The navbar should:
+- Have transparent/overlay state at the top if visually appropriate
+- Transition into a solid background after scrolling
+- Have subtle backdrop blur if appropriate
+- Remain readable
+- Have a smooth transition
+- Remain accessible
+
+Mobile:
+- Use a clean hamburger menu
+- Menu opens with a polished animation
+- Navigation remains RTL
+- CTA remains easily accessible
+
+Do not overcrowd mobile navigation.
+
+---
+
+# 7. Hero Section
+
+This is the most important visual section.
+
+Use a two-column desktop layout adapted for RTL.
+
+Suggested composition:
+
+Right side:
+- Large professional lawyer portrait
+
+Left side:
+- Small professional label:
+  "وکیل پایه یک دادگستری"
+
+- Main heading:
+  "[نام و نام خانوادگی]"
+
+- Supporting statement:
+  "ارائه خدمات تخصصی حقوقی با تکیه بر تجربه، دقت و تعهد حرفه‌ای"
+
+- Short description
+
+Primary CTA:
+- "درخواست مشاوره حقوقی"
+
+Secondary CTA:
+- "تماس با دفتر"
+
+Optional metadata:
+- شهر فعالیت
+- شماره پروانه
+- سال‌های تجربه
+
+Do not invent real lawyer information.
+
+All lawyer-specific data must be stored in a centralized configuration/data object so it can easily be replaced.
+
+Hero visual:
+- High-quality portrait
+- Elegant framing
+- Subtle decorative geometry
+- No cheesy legal stock photography
+
+Add subtle entrance animation.
+
+Animation must be tasteful and fast.
+
+---
+
+# 8. Trust / Credentials Statistics
+
+Immediately after Hero, create a compact trust section.
+
+Possible statistics:
+
+- +۱۰ سال سابقه
+- +۵۰۰ پرونده
+- +۸ حوزه تخصصی
+- +۹۵٪ رضایت موکلین
+
+IMPORTANT:
+These are placeholders only.
+
+Do not claim fake statistics as factual.
+
+Store all statistics as configurable data and make it easy to remove any statistic that does not have verified data.
+
+Each statistic should have:
+- Number
+- Label
+- Optional small icon
+
+Desktop:
+- Horizontal layout
+
+Mobile:
+- 2-column or vertical responsive layout
+
+---
+
+# 9. About the Attorney
+
+Section title:
+"درباره من"
+
+Content:
+- Professional biography
+- Education
+- Professional philosophy
+- Legal experience
+- Bar membership
+- Relevant qualifications
+
+Use a split layout:
+- Text
+- Secondary professional image
+
+Possible supporting metadata:
+- تحصیلات
+- عضویت در کانون وکلا
+- محل فعالیت
+- شماره پروانه
+- حوزه‌های تخصصی
+
+Do not fabricate credentials.
+
+If information is unavailable, use placeholders.
+
+Add a subtle visual divider or editorial detail.
+
+---
+
+# 10. Practice Areas
+
+Section title:
+"حوزه‌های تخصصی فعالیت"
+
+Create elegant cards.
+
+Example categories:
+
+1. حقوق خانواده
+2. حقوق کیفری
+3. حقوق ملکی
+4. حقوق تجاری
+5. قراردادها
+6. دعاوی حقوقی
+
+Each card:
+- Icon
+- Title
+- Short description
+- Optional "مشاهده جزئیات" interaction
+
+Cards must feel premium and minimal.
+
+Do not use excessive icons.
+
+Hover:
+- subtle elevation
+- border/accent transition
+- small movement
+- no exaggerated animation
+
+Responsive:
+- 3 columns desktop
+- 2 columns tablet
+- 1 column mobile
+
+Practice areas must be data-driven.
+
+---
+
+# 11. Professional Experience
+
+Section title:
+"سوابق حرفه‌ای"
+
+Create a polished RTL timeline.
+
+Each item:
+- Year/date
+- Position
+- Organization
+- Short description
+
+Example placeholders:
+
+۱۴۰۵
+وکیل ارشد
+نام مجموعه حقوقی
+
+۱۴۰۲
+وکیل دادگستری
+نام مجموعه
+
+۱۳۹۸
+اخذ پروانه وکالت
+
+Timeline must be easy to update.
+
+The timeline should be visually clear in RTL.
+
+Use subtle gold accent for timeline markers.
+
+Do not over-animate.
+
+---
+
+# 12. Selected Legal Experience
+
+Section title:
+"تجربه و زمینه‌های حرفه‌ای"
+
+If legally and ethically appropriate, display anonymized case studies.
+
+Possible structure:
+
+Case category:
+"دعوای تجاری"
+
+Description:
+"نمایندگی و ارائه مشاوره حقوقی در یک پرونده تجاری پیچیده..."
+
+Result:
+"نتیجه / وضعیت پرونده"
+
+IMPORTANT:
+Do not expose confidential client information.
+
+If case studies are unavailable, replace this section with:
+"زمینه‌های تجربه حرفه‌ای"
+
+Use anonymized descriptions only.
+
+---
+
+# 13. Why Choose Me
+
+Section title:
+"چرا من را انتخاب کنید؟"
+
+Create 4-6 reasons.
+
+Examples:
+
+01
+تجربه و تخصص
+"سال‌ها تجربه در رسیدگی به پرونده‌های مختلف حقوقی"
+
+02
+توجه شخصی
+"هر پرونده با توجه به شرایط خاص موکل بررسی می‌شود."
+
+03
+محرمانگی
+"حفظ محرمانگی اطلاعات و ارتباطات موکل از اصول اساسی است."
+
+04
+شفافیت
+"ارائه توضیحات روشن درباره مسیرها و گزینه‌های حقوقی."
+
+05
+پاسخگویی
+"ارتباط حرفه‌ای و پیگیری منظم امور."
+
+06
+تعهد
+"تمرکز بر ارائه راهکار حقوقی متناسب با شرایط پرونده."
+
+Do not make legally risky guarantees such as:
+- "تضمین پیروزی"
+- "۱۰۰٪ موفقیت"
+- "قطعا پرونده را برنده می‌شوم"
+
+---
+
+# 14. Testimonials
+
+Section title:
+"نظر موکلین"
+
+Create a premium testimonial slider or grid.
+
+Each testimonial:
+- Quote
+- Client name or anonymized label
+- Optional case category
+
+Example:
+"تجربه بسیار خوبی از همکاری داشتم و روند پرونده با دقت و شفافیت برای من توضیح داده شد."
+
+— موکل سابق
+
+If client names cannot be displayed:
+- "موکل سابق"
+- "موکل پرونده ملکی"
+- etc.
+
+Do not invent testimonials.
+
+Testimonials must be configurable.
+
+Slider controls must work properly in RTL.
+
+---
+
+# 15. FAQ
+
+Section title:
+"سوالات متداول"
+
+Use an accessible accordion.
+
+Example questions:
+
+- چگونه می‌توانم درخواست مشاوره بدهم؟
+- آیا امکان مشاوره آنلاین وجود دارد؟
+- برای جلسه مشاوره چه مدارکی لازم است؟
+- هزینه مشاوره چگونه محاسبه می‌شود؟
+- آیا امکان پیگیری پرونده در شهرهای دیگر وجود دارد؟
+- چگونه می‌توانم مدارک پرونده را ارسال کنم؟
+
+Answers must be placeholders/configurable.
+
+FAQ must support:
+- keyboard navigation
+- accessible buttons
+- aria-expanded
+- smooth opening/closing
+
+Only one or multiple items open based on UX decision.
+
+---
+
+# 16. Consultation CTA
+
+Create a visually strong CTA section before Contact.
+
+Heading:
+"درباره پرونده خود صحبت کنیم"
+
+Supporting text:
+"برای بررسی شرایط پرونده و دریافت مشاوره حقوقی با دفتر تماس بگیرید."
+
+Primary CTA:
+"درخواست مشاوره"
+
+Secondary:
+"تماس با دفتر"
+
+Use dark green / ivory contrast.
+
+This section should visually break the page and act as a conversion point.
+
+---
+
+# 17. Contact Section
+
+Section title:
+"تماس با من"
+
+Display:
+
+- Phone
+- Email
+- WhatsApp
+- Office address
+- Office hours
+- Social media if relevant
+- Google Maps
+
+Use icons but keep them minimal.
+
+## Contact Form
+
+Fields:
+
+- نام و نام خانوادگی
+- شماره تماس
+- ایمیل
+- موضوع
+- توضیح مختصر درباره درخواست
+
+CTA:
+"ارسال درخواست مشاوره"
+
+Validation:
+- Required fields
+- Persian-friendly validation messages
+- Phone validation
+- Email validation
+- Clear error states
+- Success state
+
+IMPORTANT:
+The form does not need a real backend unless explicitly configured.
+
+Implement it in a way that allows later connection to:
+- Email service
+- Backend API
+- Form provider
+
+Never expose secrets in frontend code.
+
+---
+
+# 18. Google Map
+
+Add an office location map.
+
+If no exact location is provided:
+- Use a placeholder
+- Keep map integration configurable
+
+Do not hardcode an unknown address.
+
+Possible implementation:
+- Google Maps embed
+- Or another map provider if preferred
+
+The map must be responsive.
+
+---
+
+# 19. Footer
+
+Footer should contain:
+
+- Lawyer name
+- Short description
+- Quick navigation
+- Contact information
+- Social links
+- Copyright
+- Legal disclaimer
+
+Example:
+
+"© ۱۴۰۵ [نام و نام خانوادگی]. تمامی حقوق محفوظ است."
+
+Legal disclaimer:
+"محتوای این وب‌سایت صرفاً جهت ارائه اطلاعات عمومی است و جایگزین مشاوره حقوقی تخصصی نیست."
+
+The disclaimer must be configurable and should not imply any jurisdiction-specific legal statement unless verified.
+
+---
+
+# 20. Mobile UX
+
+Mobile experience is critical.
+
+Implement:
+- Responsive typography
+- Responsive spacing
+- Mobile navigation
+- Full-width CTA
+- Properly sized buttons
+- Touch-friendly controls
+- No horizontal overflow
+- Responsive images
+- Responsive cards
+- Responsive timeline
+- FAQ accordion
+- Testimonial slider
+
+Consider a fixed mobile bottom action bar:
+
+- تماس
+- واتساپ
+- مشاوره
+
+Only show WhatsApp if the number/service is configured.
+
+The bottom bar must not obscure content.
+
+---
+
+# 21. Animations
+
+Use subtle premium animations.
+
+Possible:
+- Fade-up on scroll
+- Image reveal
+- Text stagger
+- Card hover
+- Button hover
+- Navigation transition
+- FAQ accordion
+- Testimonial transition
+
+Rules:
+- Keep animations subtle
+- Fast enough to feel responsive
+- Avoid excessive motion
+- Respect `prefers-reduced-motion`
+
+If the user prefers reduced motion, disable non-essential animations.
+
+---
+
+# 22. Images
+
+Use:
+- High-quality professional lawyer portrait
+- Optional secondary office portrait
+- No cliché legal stock imagery
+
+Images must:
+- Use responsive sizing
+- Have proper alt text
+- Use lazy loading where appropriate
+- Avoid layout shift
+- Be optimized
+
+If actual images are unavailable, create clear placeholder components.
+
+Do not download copyrighted images without appropriate permission.
+
+---
+
+# 23. Icons
+
+Use a consistent icon library.
+
+Preferred:
+- Lucide Icons
+- Or another lightweight modern icon library
+
+Icons must:
+- Be visually consistent
+- Work in RTL
+- Have accessible labels where necessary
+
+Do not use emojis as primary UI icons.
+
+---
+
+# 24. SEO
+
+Implement proper SEO.
+
+Required:
+- Persian page title
+- Meta description
+- Canonical URL
+- Open Graph metadata
+- Twitter/X metadata if appropriate
+- Favicon
+- Semantic HTML
+- Proper H1/H2/H3 hierarchy
+- Descriptive alt text
+- Structured data where appropriate
+
+Use lawyer/person structured data only when the actual information is available.
+
+Potential schema:
+- Person
+- LegalService
+- LocalBusiness if applicable
+
+Do not fabricate structured-data fields.
+
+---
+
+# 25. Accessibility
+
+Target WCAG 2.1 AA-level practices where practical.
+
+Requirements:
+- Semantic HTML
+- Keyboard navigation
+- Visible focus states
+- Sufficient color contrast
+- Accessible forms
+- Accessible accordion
+- Accessible navigation
+- Meaningful alt text
+- Screen-reader-friendly labels
+- Reduced motion support
+
+Do not rely on color alone to communicate state.
+
+---
+
+# 26. Performance
+
+The site should load quickly.
+
+Requirements:
+- Optimize images
+- Use modern image formats when possible
+- Lazy-load below-the-fold images
+- Avoid unnecessary dependencies
+- Minimize JavaScript
+- Avoid heavy animation libraries unless necessary
+- Avoid huge background videos
+- Avoid unnecessary API calls
+
+Target:
+- Excellent Lighthouse performance
+- Excellent mobile performance
+- Minimal layout shift
+
+---
+
+# 27. Responsive Breakpoints
+
+Use sensible responsive breakpoints.
+
+Suggested:
+- Mobile: < 640px
+- Tablet: 640px–1024px
+- Desktop: 1024px–1440px
+- Large desktop: > 1440px
+
+Do not blindly follow these numbers if the framework has better defaults.
+
+The design must remain visually balanced at intermediate widths.
+
+---
+
+# 28. Content Architecture
+
+Do not hardcode all lawyer-specific information directly into UI components.
+
+Create a centralized configuration/data structure.
+
+For example:
+
+lawyer:
+- name
+- title
+- bio
+- phone
+- email
+- WhatsApp
+- address
+- officeHours
+- barAssociation
+- licenseNumber
+- location
+- socialLinks
+- portrait
+- secondaryImage
+
+practiceAreas:
+- title
+- description
+- icon
+
+experience:
+- year
+- title
+- organization
+- description
+
+testimonials:
+- quote
+- name
+- category
+
+faq:
+- question
+- answer
+
+stats:
+- value
+- label
+
+This makes the website reusable for another lawyer.
+
+---
+
+# 29. Forms / Backend
+
+Frontend form must be production-ready but backend implementation should be separated.
+
+Create a clean abstraction such as:
+
+submitConsultationRequest()
+
+so that a real API or email provider can be connected later.
+
+Do not:
+- put email credentials in frontend
+- put API secrets in frontend
+- expose private environment variables
+
+If a backend is implemented:
+- validate input server-side
+- sanitize input
+- rate-limit submissions
+- protect against spam
+- provide proper error handling
+
+For the initial version, a mock submission handler is acceptable if clearly documented.
+
+---
+
+# 30. Security
+
+Implement basic web security best practices.
+
+- No secrets in client bundle
+- Sanitize user input
+- Avoid unsafe HTML rendering
+- Avoid unnecessary third-party scripts
+- Use HTTPS in deployment
+- Configure security headers when backend/server configuration is available
+- Do not expose private data
+- Do not expose client/case information
+
+---
+
+# 31. Architecture / Code Quality
+
+Code must be:
+- Clean
+- Modular
+- Maintainable
+- Reusable
+- Typed if TypeScript is used
+- Component-driven
+
+Avoid:
+- Giant components
+- Duplicate UI
+- Hardcoded content everywhere
+- Inline magic values
+- Unnecessary abstraction
+- Overengineering
+
+Suggested component structure:
+
+components/
+  Navbar
+  Hero
+  TrustStats
+  About
+  PracticeAreas
+  ExperienceTimeline
+  LegalExperience
+  WhyChoose
+  Testimonials
+  FAQ
+  ConsultationCTA
+  Contact
+  ContactForm
+  Map
+  Footer
+  MobileActionBar
+
+data/
+  lawyer
+  practiceAreas
+  experience
+  testimonials
+  faq
+
+---
+
+# 32. Recommended Technology
+
+Preferred stack:
+
+- React
+- TypeScript
+- Vite or Next.js
+- Tailwind CSS or a clean CSS architecture
+- Lucide Icons
+
+If SEO is a major priority, prefer Next.js.
+
+If the project is intentionally a lightweight static site, Vite + React is acceptable.
+
+Do not introduce a backend unless required.
+
+Use CSS logical properties where possible:
+- margin-inline
+- padding-inline
+- inset-inline
+- text-align: start
+- etc.
+
+Prefer native RTL support over manually reversing every component.
+
+---
+
+# 33. UI Details
+
+Buttons:
+- Rounded but not overly pill-shaped
+- Strong typography
+- Clear hover state
+- Clear focus state
+- Appropriate padding
+
+Cards:
+- Subtle border
+- Minimal shadow
+- Generous whitespace
+- Elegant hover transition
+
+Sections:
+- Large vertical spacing
+- Strong visual hierarchy
+- Consistent max-width container
+
+Container:
+- Use a consistent max-width around 1200–1280px depending on visual testing.
+
+Avoid:
+- Extremely narrow content
+- Extremely wide text lines
+
+---
+
+# 34. Navigation Anchors
+
+Recommended IDs:
+
+#home
+#about
+#practice-areas
+#experience
+#legal-experience
+#why-me
+#testimonials
+#faq
+#consultation
+#contact
+
+Navigation should smoothly scroll to these sections.
+
+Account for sticky header offset.
+
+---
+
+# 35. Content Placeholders
+
+Use realistic Persian placeholder content where necessary, but clearly separate it from verified lawyer information.
+
+Example:
+
+نام:
+"نام و نام خانوادگی"
+
+عنوان:
+"وکیل پایه یک دادگستری"
+
+Hero:
+"ارائه خدمات تخصصی حقوقی با تکیه بر تجربه، دقت و تعهد حرفه‌ای"
+
+Do not invent:
+- Bar license number
+- Years of experience
+- Number of cases
+- Success rate
+- University
+- Law firm
+- Client names
+- Testimonials
+- Awards
+
+These must remain configurable placeholders until real information is supplied.
+
+---
+
+# 36. Localization Details
+
+Use Persian:
+- Text
+- Labels
+- Error messages
+- Buttons
+- FAQ
+- Navigation
+- Dates where appropriate
+
+Be careful with:
+- Persian and Arabic character normalization
+- نیم‌فاصله
+- ی / ک characters
+- Number formatting
+- Phone number display
+- Email direction
+
+Email and phone fields may require LTR handling inside RTL UI.
+
+For example:
+- `direction: ltr` for email
+- `direction: ltr` for phone numbers where appropriate
+
+But their labels and surrounding layout remain RTL.
+
+---
+
+# 37. Browser Support
+
+Support modern:
+- Chrome
+- Safari
+- Firefox
+- Edge
+
+Pay special attention to:
+- iOS Safari
+- Android Chrome
+
+Test:
+- 375px width
+- 390px width
+- 430px width
+- 768px width
+- 1024px width
+- 1440px width
+- 1920px width
+
+---
+
+# 38. Final UX Flow
+
+The intended user journey:
+
+1. User lands on Hero
+2. Immediately understands who the lawyer is
+3. Sees professional credibility
+4. Learns about expertise
+5. Reviews practice areas
+6. Reviews experience
+7. Builds trust through reasons/testimonials
+8. Gets answers through FAQ
+9. Sees strong consultation CTA
+10. Can contact the lawyer immediately
+
+The website should minimize friction between:
+"من به وکیل نیاز دارم"
+and
+"درخواست مشاوره"
+
+---
+
+# 39. Final Design Quality Bar
+
+The website must NOT look like:
+- A generic Bootstrap template
+- A cheap WordPress theme
+- A basic portfolio
+- A generic law firm landing page
+
+It should look like:
+- A premium personal brand
+- A high-end attorney portfolio
+- A modern editorial website
+- A professionally designed legal brand
+
+Prioritize:
+1. Typography
+2. Spacing
+3. Photography
+4. Layout
+5. Trust
+6. CTA clarity
+7. Responsive behavior
+8. Accessibility
+9. Performance
+
+Do not add features merely for the sake of having features.
+
+---
+
+# 40. Deliverables
+
+The coding agent must deliver:
+
+- Complete source code
+- Responsive UI
+- RTL support
+- All sections implemented
+- Centralized lawyer configuration
+- Centralized content data
+- Functional navigation
+- Functional mobile menu
+- Functional FAQ accordion
+- Functional testimonials
+- Functional contact form UI
+- Contact information section
+- Map placeholder/integration point
+- SEO metadata
+- Accessibility improvements
+- Performance optimizations
+- README
+
+README must explain:
+- How to install
+- How to run locally
+- How to build
+- How to deploy
+- Where to change lawyer information
+- Where to replace images
+- Where to modify practice areas
+- Where to modify testimonials
+- Where to configure contact information
+- Where to connect the contact form backend
+
+---
+
+# 41. Definition of Done
+
+The implementation is complete only when:
+
+[ ] Website is fully Persian
+[ ] Website is fully RTL
+[ ] Website is single-page
+[ ] Desktop layout is polished
+[ ] Tablet layout is polished
+[ ] Mobile layout is polished
+[ ] Navbar works
+[ ] Mobile menu works
+[ ] Smooth scrolling works
+[ ] Hero is implemented
+[ ] Trust statistics are implemented
+[ ] About section is implemented
+[ ] Practice Areas are implemented
+[ ] Experience timeline is implemented
+[ ] Legal Experience section is implemented
+[ ] Why Choose Me section is implemented
+[ ] Testimonials are implemented
+[ ] FAQ works
+[ ] Consultation CTA works
+[ ] Contact section is implemented
+[ ] Contact form validation works
+[ ] Map integration point exists
+[ ] Footer is implemented
+[ ] SEO metadata exists
+[ ] Semantic HTML is used
+[ ] Accessibility basics are implemented
+[ ] Reduced-motion support exists
+[ ] No horizontal overflow exists
+[ ] No fake lawyer credentials are presented as facts
+[ ] No secrets exist in frontend code
+[ ] Images are optimized
+[ ] README is complete
+[ ] Project can be built successfully
+[ ] Production build is tested
+[ ] All placeholder content is easy to replace
+
+---
+
+# 42. Important Implementation Instruction
+
+Do not ask for lawyer-specific information before implementing the UI.
+
+Use configurable placeholders and build the complete visual/product experience first.
+
+The final implementation should make it possible to replace all placeholders from one central configuration/data area.
+
+The priority is to build a polished, premium, production-ready Persian RTL lawyer portfolio website that can later be populated with the real lawyer's information.

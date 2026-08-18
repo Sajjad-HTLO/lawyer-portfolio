@@ -1,0 +1,15 @@
+{
+  "name": "lawyer-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "وب‌سایت تک‌صفحه‌ای، فارسی و راست‌چین برای وکیل — بدون فریم‌ورک و با پشتیبانی GitHub Pages",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node serve.mjs",
+    "preview": "node serve.mjs dist"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
